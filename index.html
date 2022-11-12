@@ -22,7 +22,7 @@
 			var inputPassword = document.getElementById("pwd").value;
 			
 			
-			if(inputUsername == "ENGINEERING" &&  inputPassword == "MEO2022")
+			if(inputUsername == "ENGINEERING" &&  inputPassword == "MEO@2022")
     {
         alert( "Validation succeeded, select ok to continue.." );
         //location.href="https://docs.google.com/spreadsheets/d/1jLN27TX1QZEsdPPXDHEGQ_0sOMyPZE88UrtCIV78QYQ/edit#gid=775961110";
@@ -32,9 +32,8 @@
     else
     {
         alert( "Wrong Password!" );
-		document.getElementById("pwd").reset();
-		document.getElementById("pwd").focus();
-		
+	    document.getElementById("meo").reset();
+	    document.getElementById("pwd").focus();
 		
     }
     }
@@ -175,7 +174,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
 
         <div class="form-field d-flex align-items-center"> 
           <span class="fas fa-key"></span> 
-        <input type="password" name="password" id="pwd" placeholder="Password"> 
+        <input type="password" name="password" id="password" placeholder="Password"> 
         </div> 
         <button class="btn mt-3" onclick="getInputValue()">Login</button>
     </div>
