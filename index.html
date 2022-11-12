@@ -16,27 +16,7 @@
 	
 	
 <script> 
- function getInputValue(){
-            // Selecting the input element and get its value 
-            var inputUsername = document.getElementById("userName").value;
-			var inputPassword = document.getElementById("pwd").value;
-			
-			
-			if(inputUsername == "ENGINEERING" &&  inputPassword == "MEO@2022")
-    {
-        alert( "Validation succeeded, select ok to continue.." );
-        //location.href="https://docs.google.com/spreadsheets/d/1jLN27TX1QZEsdPPXDHEGQ_0sOMyPZE88UrtCIV78QYQ/edit#gid=775961110";
-		location.href="https://script.google.com/macros/s/AKfycbzKLI1Qp8YmEwbCjhNIPj5ly2L-JzAHd59elIt4HczcDZAjEzAXi0R-IMsYeMgcCvk9/exec";
-		
-    }
-    else
-    {
-        alert( "Wrong Password!" );
-	    document.getElementById("meo").reset();
-	    document.getElementById("pwd").focus();
-		
-    }
-    }
+
  </script>
 	<style>
 	
@@ -188,7 +168,28 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
    
 	
 	<script>
-	document.getElementById("logemail").disabled = true;
+		 function getInputValue(){
+            // Selecting the input element and get its value 
+            var inputUsername = document.getElementById("userName").value;
+			var inputPassword = document.getElementById("pwd").value;
+			
+			
+	if(inputUsername == "ENGINEERING" &&  inputPassword == "MEO@2022")
+   	 {
+        	alert( "Validation succeeded, select ok to continue.." );
+        	//location.href="https://docs.google.com/spreadsheets/d/1jLN27TX1QZEsdPPXDHEGQ_0sOMyPZE88UrtCIV78QYQ/edit#gid=775961110";
+		location.href="https://script.google.com/macros/s/AKfycbzKLI1Qp8YmEwbCjhNIPj5ly2L-JzAHd59elIt4HczcDZAjEzAXi0R-IMsYeMgcCvk9/exec";
+		
+    	}
+    	else
+    	{
+        alert( "Wrong Password!" );
+	    document.getElementById("password").reset();
+	    document.getElementById("password").focus();
+		
+    	}
+        }
+	document.getElementById("userName").disabled = true;
 	document.meo.reset();
     	</script>
 </body>
