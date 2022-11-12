@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
 	<title>MEO Buss. Login</title>
@@ -22,21 +22,24 @@
 			var inputPassword = document.getElementById("pwd").value;
 			
 			
-	if(inputUsername == "ENGINEERING" &&  inputPassword == "MEO@2022")
-   	 {
-        	alert( "Validation succeeded, select ok to continue.." );
-        	//location.href="https://docs.google.com/spreadsheets/d/1jLN27TX1QZEsdPPXDHEGQ_0sOMyPZE88UrtCIV78QYQ/edit#gid=775961110";
+			if(inputUsername == "ENGINEERING" &&  inputPassword == "MEO2022")
+    {
+        alert( "Validation succeeded, select ok to continue.." );
+        //location.href="https://docs.google.com/spreadsheets/d/1jLN27TX1QZEsdPPXDHEGQ_0sOMyPZE88UrtCIV78QYQ/edit#gid=775961110";
 		location.href="https://script.google.com/macros/s/AKfycbzKLI1Qp8YmEwbCjhNIPj5ly2L-JzAHd59elIt4HczcDZAjEzAXi0R-IMsYeMgcCvk9/exec";
 		
-    	}
-    	else
-    	{
+    }
+    else
+    {
+        
+		//document.meo.reset();
+        document.getElementById("pwd").value = "";
+		document.getElementById("pwd").focus();
         alert( "Wrong Password!" );
-	    document.getElementById("meo").reset();
-	    document.getElementById("password").focus();
 		
-    	}
-        }
+		
+    }
+    }
  </script>
 	<style>
 	
@@ -174,7 +177,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
 
         <div class="form-field d-flex align-items-center"> 
           <span class="fas fa-key"></span> 
-        <input type="password" name="password" id="password" placeholder="Password"> 
+        <input type="password" name="password" id="pwd" placeholder="Password"> 
         </div> 
         <button class="btn mt-3" onclick="getInputValue()">Login</button>
     </div>
@@ -188,9 +191,8 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
    
 	
 	<script>
-	  
 	document.getElementById("userName").disabled = true;
 	document.meo.reset();
-    	</script>
+    </script>
 </body>
 </html>
