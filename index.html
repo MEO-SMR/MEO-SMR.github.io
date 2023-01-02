@@ -19,22 +19,12 @@
  function getInputValue(){
             // Selecting the input element and get its value 
             var inputUsername = document.getElementById("userName").value;
-	    var inputPassword = document.getElementById("pwd").value;	
-
+	    var inputPassword = document.getElementById("pwd").value;		
 			
 	if(inputUsername == "ENGINEERING" &&  inputPassword == "MEO2023")
     	{
 		//window.alert( "Validation succeeded, select ok to continue..");
-		
-		document.getElementById('modal-button').addEventListener('click', function() {
-		document.getElementById('modal1').style.display = 'block';
-		});
-
-		document.getElementById('close-modal1').addEventListener('click', function() {
-		document.getElementById('modal1').style.display = 'none';
-		});
-		
-		//alert('Validation succeeded, select ok to continue..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
+		alert('Validation succeeded, select ok to continue..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
 		//location.href="https://script.google.com/macros/s/AKfycbzKLI1Qp8YmEwbCjhNIPj5ly2L-JzAHd59elIt4HczcDZAjEzAXi0R-IMsYeMgcCvk9/exec";//2022
 		location.href="https://script.google.com/macros/s/AKfycbx3kHS4KSuHngBQsGTaCqqihBeddgyBcGOsMinQCtc-i3Jv_ukcPjSF832ttqX0OGdo/exec";//2023
 		
@@ -43,19 +33,7 @@
 		    
 		    document.getElementById('pwd').focus();
 		    //window.alert("Please enter password.." );
-		    
-		    //alert('Please enter password..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
-		    
-		    document.getElementById('modal-button').addEventListener('click', function() {
-		    document.getElementById('modal2').style.display = 'block';
-		    });
-
-		  document.getElementById('close-modal2').addEventListener('click', function() {
-		  document.getElementById('modal2').style.display = 'none';
-		  });
-		  
-		   document.getElementById('pwd').focus();
-		    
+		    alert('Please enter password..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
 	    }
 	    else 
 	    {
@@ -64,18 +42,8 @@
         	document.getElementById("pwd").value = "";
 		document.getElementById("pwd").focus();
         	//window.alert("Wrong Password!");
-	        //alert('Wrong Password!', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
-		    
-		document.getElementById('modal-button').addEventListener('click', function() {
-		document.getElementById('modal3').style.display = 'block';
-		});
-
-		document.getElementById('close-modal3').addEventListener('click', function() {
-		document.getElementById('modal3').style.display = 'none';
-		});
+	        alert('Wrong Password!', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
 		
-		document.getElementById("pwd").value = "";
-		document.getElementById("pwd").focus();
     }
     }
  </script>
@@ -199,51 +167,9 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
      }
  }
 
-		
-	.card1 {
-		 width: 190px;
-		 height: 100px;
-		 top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		position: fixed;
-		z-index: 1;
-		overflow: auto;
-		 background: #e8e8e8;
-		 border-radius: 10px;
-		 transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-	}
-
-	.shadow {
-		 box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
-			     0 0  0 2px rgb(190, 190, 190),
-			     0.3em 0.3em 1em rgba(0,0,0,0.3);
-	}
-
 	</style>
    </head>
 <body>
-	
-<div id="modal1" class="modal card1 shadow">
-  <div class="modal-content">
-    <span id="close-modal1" class="close">&times;</span>
-    <p>Validation succeeded, select ok to continue..</p>
-  </div>
-</div>
-	
-<div id="modal2" class="modal card1 shadow">
-  <div class="modal-content">
-    <span id="close-modal2" class="close">&times;</span>
-    <p>Please input password..</p>
-  </div>
-</div>
-	
-<div id="modal3" class="modal card1 shadow">
-  <div class="modal-content">
-    <span id="close-modal3" class="close">&times;</span>
-    <p>Wrong Password..</p>
-  </div>
-</div>
 
  <div class="container responsive">
 		 <div class="wrapper container-fluid">
