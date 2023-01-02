@@ -20,19 +20,20 @@
             // Selecting the input element and get its value 
             var inputUsername = document.getElementById("userName").value;
 	    var inputPassword = document.getElementById("pwd").value;
-	    // Get the dimensions of the alert message
-		var alertWidth = window.alert.offsetWidth;
-	 	console.log(alertWidth);
-		var alertHeight = window.alert.offsetHeight;
-	 	console.log(alertHeight);
+	 
+// 	    // Get the dimensions of the alert message
+// 		var alertWidth = window.alert.offsetWidth;
+// 	 	console.log(alertWidth);
+// 		var alertHeight = window.alert.offsetHeight;
+// 	 	console.log(alertHeight);
 
-		// Calculate the center position of the screen
-		var centerX = window.innerWidth / 2 - alertWidth / 2;
-		var centerY = window.innerHeight / 2 - alertHeight / 2;
+// 		// Calculate the center position of the screen
+// 		var centerX = window.innerWidth / 2 - alertWidth / 2;
+// 		var centerY = window.innerHeight / 2 - alertHeight / 2;
 
-		// Set the alert message's position
-		window.alert.style.left = centerX + 'px';
-		window.alert.style.top = centerY + 'px'
+// 		// Set the alert message's position
+// 		window.alert.style.left = centerX + 'px';
+// 		window.alert.style.top = centerY + 'px'
 			
 			
 	if(inputUsername == "ENGINEERING" &&  inputPassword == "MEO2023")
@@ -43,19 +44,6 @@
 		
 	   }
 	    else if(inputUsername == "ENGINEERING" &&  inputPassword == "") {
-		    
-		    var alertWidth = window.alert.offsetWidth;
-	 	console.log(alertWidth);
-		var alertHeight = window.alert.offsetHeight;
-	 	console.log(alertHeight);
-
-		// Calculate the center position of the screen
-		var centerX = window.innerWidth / 2 - alertWidth / 2;
-		var centerY = window.innerHeight / 2 - alertHeight / 2;
-
-		// Set the alert message's position
-		window.alert.style.left = centerX + 'px';
-		window.alert.style.top = centerY + 'px'
 		    
 		    document.getElementById('pwd').focus();
 		    window.alert("Please enter password.." );
