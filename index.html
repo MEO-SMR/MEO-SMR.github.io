@@ -25,7 +25,15 @@
 	if(inputUsername == "ENGINEERING" &&  inputPassword == "MEO2023")
     	{
 		//window.alert( "Validation succeeded, select ok to continue..");
-		alert('Validation succeeded, select ok to continue..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
+		document.getElementById('modal-button').addEventListener('click', function() {
+		document.getElementById('modal1').style.display = 'block';
+		});
+
+		document.getElementById('close-modal').addEventListener('click', function() {
+		document.getElementById('modal1').style.display = 'none';
+		});
+		
+		//alert('Validation succeeded, select ok to continue..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
 		//location.href="https://script.google.com/macros/s/AKfycbzKLI1Qp8YmEwbCjhNIPj5ly2L-JzAHd59elIt4HczcDZAjEzAXi0R-IMsYeMgcCvk9/exec";//2022
 		location.href="https://script.google.com/macros/s/AKfycbx3kHS4KSuHngBQsGTaCqqihBeddgyBcGOsMinQCtc-i3Jv_ukcPjSF832ttqX0OGdo/exec";//2023
 		
@@ -34,7 +42,14 @@
 		    
 		    document.getElementById('pwd').focus();
 		    //window.alert("Please enter password.." );
-		    alert('Please enter password..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
+		    //alert('Please enter password..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
+		    document.getElementById('modal-button').addEventListener('click', function() {
+		document.getElementById('modal2').style.display = 'block';
+		});
+
+		document.getElementById('close-modal').addEventListener('click', function() {
+		document.getElementById('modal2').style.display = 'none';
+		});
 		    
 	    }
 	    else 
@@ -44,7 +59,14 @@
         	document.getElementById("pwd").value = "";
 		document.getElementById("pwd").focus();
         	//window.alert("Wrong Password!");
-	        alert('Wrong Password!', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
+	        //alert('Wrong Password!', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
+		    document.getElementById('modal-button').addEventListener('click', function() {
+		document.getElementById('modal3').style.display = 'block';
+		});
+
+		document.getElementById('close-modal').addEventListener('click', function() {
+		document.getElementById('modal3').style.display = 'none';
+		});
 		
     }
     }
@@ -168,10 +190,68 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
          padding: 40px 15px 15px 15px;
      }
  }
+		
+.modal1, .modal2,.modal3 {
+display: none;
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+background-color: #fefefe;
+margin: 15% auto;
+padding: 20px;
+border: 1px solid #888;
+width: 80%;
+}
+
+.close {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
 
 	</style>
    </head>
 <body>
+	
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span id="close-modal" class="close">&times;</span>
+    <h2>MEO Login</h2>
+    <p>Validation succeeded, select ok to continue..</p>
+  </div>
+</div>
+	
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span id="close-modal" class="close">&times;</span>
+    <h2>MEO Login</h2>
+    <p>Please input password..</p>
+  </div>
+</div>
+	
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span id="close-modal" class="close">&times;</span>
+    <h2>MEO Login</h2>
+    <p>Wrong Password..</p>
+  </div>
+</div>
 
  <div class="container responsive">
 		 <div class="wrapper container-fluid">
