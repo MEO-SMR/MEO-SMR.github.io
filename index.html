@@ -199,7 +199,13 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
 .card1 {
  width: 190px;
  height: 254px;
- background: white;
+ top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+position: fixed;
+z-index: 1;
+overflow: auto;
+ background: #e8e8e8;
  border-radius: 10px;
  transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
