@@ -19,7 +19,15 @@
  function getInputValue(){
             // Selecting the input element and get its value 
             var inputUsername = document.getElementById("userName").value;
-	    var inputPassword = document.getElementById("pwd").value;		
+	    var inputPassword = document.getElementById("pwd").value;	
+	 
+	 var screenHeight = window.innerHeight;
+	var alertHeight = document.getElementById("alertBox").offsetHeight;
+
+	if (screenHeight > alertHeight) {
+	  var scrollPos = (screenHeight - alertHeight) / 2;
+	  window.scrollTo(0, scrollPos);
+	}
 			
 	if(inputUsername == "ENGINEERING" &&  inputPassword == "MEO2023")
     	{
