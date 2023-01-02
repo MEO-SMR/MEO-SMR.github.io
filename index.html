@@ -21,18 +21,18 @@
             var inputUsername = document.getElementById("userName").value;
 	    var inputPassword = document.getElementById("pwd").value;	
 	 
-	 var screenHeight = window.innerHeight;
-	var alertHeight = document.getElementById("alertBox").offsetHeight;
-
-	if (screenHeight > alertHeight) {
-	  var scrollPos = (screenHeight - alertHeight) / 2;
-	  window.scrollTo(0, scrollPos);
+	function centerAlert() {
+	var screenHeight = window.innerHeight;
+	var alertHeight = document.querySelector('.alert').offsetHeight;
+	var topPosition = (screenHeight - alertHeight) / 2;
+	document.querySelector('.alert').style.top = topPosition + "px";
 	}
 			
 	if(inputUsername == "ENGINEERING" &&  inputPassword == "MEO2023")
     	{
 		//window.alert( "Validation succeeded, select ok to continue..");
-		alert('Validation succeeded, select ok to continue..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
+		//alert('Validation succeeded, select ok to continue..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
+		centerAlert("Validation succeeded, select ok to continue..");
 		//location.href="https://script.google.com/macros/s/AKfycbzKLI1Qp8YmEwbCjhNIPj5ly2L-JzAHd59elIt4HczcDZAjEzAXi0R-IMsYeMgcCvk9/exec";//2022
 		location.href="https://script.google.com/macros/s/AKfycbx3kHS4KSuHngBQsGTaCqqihBeddgyBcGOsMinQCtc-i3Jv_ukcPjSF832ttqX0OGdo/exec";//2023
 		
@@ -41,7 +41,8 @@
 		    
 		    document.getElementById('pwd').focus();
 		    //window.alert("Please enter password.." );
-		    alert('Please enter password..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
+		    //alert('Please enter password..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
+		    centerAlert("Please enter password..");
 	    }
 	    else 
 	    {
