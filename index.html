@@ -20,19 +20,29 @@
             // Selecting the input element and get its value 
             var inputUsername = document.getElementById("userName").value;
 	    var inputPassword = document.getElementById("pwd").value;
-	    //inputPassword.focus();
+	    // Get the dimensions of the alert message
+		var alertWidth = window.alert.offsetWidth;
+		var alertHeight = window.alert.offsetHeight;
+
+		// Calculate the center position of the screen
+		var centerX = window.innerWidth / 2 - alertWidth / 2;
+		var centerY = window.innerHeight / 2 - alertHeight / 2;
+
+		// Set the alert message's position
+		window.alert.style.left = centerX + 'px';
+		window.alert.style.top = centerY + 'px'
 			
 			
 	if(inputUsername == "ENGINEERING" &&  inputPassword == "MEO2023")
     	{
-		alert( "Validation succeeded, select ok to continue.." );
+		window.alert( "Validation succeeded, select ok to continue..");
 		//location.href="https://script.google.com/macros/s/AKfycbzKLI1Qp8YmEwbCjhNIPj5ly2L-JzAHd59elIt4HczcDZAjEzAXi0R-IMsYeMgcCvk9/exec";//2022
 		location.href="https://script.google.com/macros/s/AKfycbx3kHS4KSuHngBQsGTaCqqihBeddgyBcGOsMinQCtc-i3Jv_ukcPjSF832ttqX0OGdo/exec";//2023
 		
 	   }
-	    else if(inputUsername == "ENGINEERING" &&  inputPassword == "" ) {
+	    else if(inputUsername == "ENGINEERING" &&  inputPassword == "") {
 		    document.getElementById('pwd').focus();
-		    alert( "Please enter password.." );
+		    window.alert("Please enter password.." );
 	    }
 	    else 
 	    {
@@ -40,7 +50,7 @@
 		//document.meo.reset();
         	document.getElementById("pwd").value = "";
 		document.getElementById("pwd").focus();
-        	alert( "Wrong Password!" );
+        	window.alert("Wrong Password!");
 		
     }
     }
