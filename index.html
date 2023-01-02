@@ -19,28 +19,28 @@
  function getInputValue(){
             // Selecting the input element and get its value 
             var inputUsername = document.getElementById("userName").value;
-			var inputPassword = document.getElementById("pwd").value;
+	    var inputPassword = document.getElementById("pwd").value;
 	   inputPassword.focus();
 			
 			
-	if(inputUsername == "ENGINEERING" &&  inputPassword == "MEO2023")
+	if(inputUsername === "ENGINEERING" &&  inputPassword === "MEO2023")
     	{
 		alert( "Validation succeeded, select ok to continue.." );
 		//location.href="https://script.google.com/macros/s/AKfycbzKLI1Qp8YmEwbCjhNIPj5ly2L-JzAHd59elIt4HczcDZAjEzAXi0R-IMsYeMgcCvk9/exec";//2022
 		location.href="https://script.google.com/macros/s/AKfycbx3kHS4KSuHngBQsGTaCqqihBeddgyBcGOsMinQCtc-i3Jv_ukcPjSF832ttqX0OGdo/exec";//2023
 		
 	   }
-	    else if(inputPassword == "" ) {
+	    else if(inputUsername === "ENGINEERING" &&  inputPassword === "" ) {
 		    alert( "Please enter password.." );
-		    document.meo.reset();
+		    //document.meo.reset();
 	    }
 	    else 
 	    {
         
 		//document.meo.reset();
-        document.getElementById("pwd").value = "";
+        	document.getElementById("pwd").value = "";
 		document.getElementById("pwd").focus();
-        alert( "Wrong Password!" );
+        	alert( "Wrong Password!" );
 		
     }
     }
