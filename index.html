@@ -23,7 +23,8 @@
 			
 	if(inputUsername == "ENGINEERING" &&  inputPassword == "MEO2023")
     	{
-		window.alert( "Validation succeeded, select ok to continue..");
+		//window.alert( "Validation succeeded, select ok to continue..");
+		alert('Validation succeeded, select ok to continue..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
 		//location.href="https://script.google.com/macros/s/AKfycbzKLI1Qp8YmEwbCjhNIPj5ly2L-JzAHd59elIt4HczcDZAjEzAXi0R-IMsYeMgcCvk9/exec";//2022
 		location.href="https://script.google.com/macros/s/AKfycbx3kHS4KSuHngBQsGTaCqqihBeddgyBcGOsMinQCtc-i3Jv_ukcPjSF832ttqX0OGdo/exec";//2023
 		
@@ -31,7 +32,8 @@
 	    else if(inputUsername == "ENGINEERING" &&  inputPassword == "") {
 		    
 		    document.getElementById('pwd').focus();
-		    window.alert("Please enter password.." );
+		    //window.alert("Please enter password.." );
+		    alert('Please enter password..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
 	    }
 	    else 
 	    {
@@ -39,7 +41,8 @@
 		//document.meo.reset();
         	document.getElementById("pwd").value = "";
 		document.getElementById("pwd").focus();
-        	window.alert("Wrong Password!");
+        	//window.alert("Wrong Password!");
+	        alert('Wrong Password!', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
 		
     }
     }
