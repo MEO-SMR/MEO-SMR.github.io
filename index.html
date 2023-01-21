@@ -17,36 +17,96 @@
 	
 <script> 
  function getInputValue(){
-            // Selecting the input element and get its value 
-            var inputUsername = document.getElementById("userName").value;
-	    var inputPassword = document.getElementById("pwd").value;		
+         
+//             var inputUsername = document.getElementById("userName").value;
+// 	    var inputPassword = document.getElementById("pwd").value;		
 			
-	if(inputUsername == "ENGINEERING" &&  inputPassword == "MEO2023")
-    	{
-		//window.alert( "Validation succeeded, select ok to continue..");
-		alert('Validation succeeded, select ok to continue..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
-		//location.href="https://script.google.com/macros/s/AKfycbzKLI1Qp8YmEwbCjhNIPj5ly2L-JzAHd59elIt4HczcDZAjEzAXi0R-IMsYeMgcCvk9/exec";//2022
-		//location.href="https://script.google.com/macros/s/AKfycbx3kHS4KSuHngBQsGTaCqqihBeddgyBcGOsMinQCtc-i3Jv_ukcPjSF832ttqX0OGdo/exec";//2023
-		location.href="https://script.google.com/macros/s/AKfycbwo2RV31MqOFnAaKwKXD385jD08PNet2-RMV7qQNzrfFlOE32vmRdeCS4JiDQ2Kd4FK/exec";//2023 final version
+// 	if(inputUsername == "ENGINEERING" &&  inputPassword == "MEO2023")
+//     	{
+// 		alert('Validation succeeded, select ok to continue..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
 		
-	   }
-	    else if(inputUsername == "ENGINEERING" &&  inputPassword == "") {
+// 		location.href="https://script.google.com/macros/s/AKfycbwo2RV31MqOFnAaKwKXD385jD08PNet2-RMV7qQNzrfFlOE32vmRdeCS4JiDQ2Kd4FK/exec";
+		
+// 	   }
+// 	    else if(inputUsername == "ENGINEERING" &&  inputPassword == "") {
 		    
-		    document.getElementById('pwd').focus();
-		    //window.alert("Please enter password.." );
-		    alert('Please enter password..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
-	    }
-	    else 
-	    {
+// 		    document.getElementById('pwd').focus();
+// 		    //window.alert("Please enter password.." );
+// 		    alert('Please enter password..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
+// 	    }
+// 	    else 
+// 	    {
         
-		//document.meo.reset();
-        	document.getElementById("pwd").value = "";
-		document.getElementById("pwd").focus();
-        	//window.alert("Wrong Password!");
-	        alert('Wrong Password!', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
+// 		//document.meo.reset();
+//         	document.getElementById("pwd").value = "";
+// 		document.getElementById("pwd").focus();
+//         	//window.alert("Wrong Password!");
+// 	        alert('Wrong Password!', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
 		
+//     }
+//     }
+	 
+	 //new code
+var inputUsername = document.getElementById("userName").value;
+var inputPassword = document.getElementById("pwd").value;
+
+function fetchDataFromJasonFile() {
+jsonData = import data from 'users.json' assert { type: 'JSON' };
+    return jsonData;
+}
+
+
+function getUserName(inputUsername) {
+var data = fetchDataFromJasonFile();
+
+ for (var i = 0; i < data.length; i++) {
+    if (inputUsername === data[i].Username ) {
+      return data[i].Username; 
     }
+  }
+  return "Wrong Username";
+
+}
+
+function getUserPassword(inputUsername) {
+var data = fetchDataFromJasonFile();
+
+ for (var i = 0; i < data.length; i++) {
+    if (inputUsername === data[i].Username ) {
+      return data[i].Password; 
     }
+  }
+  return "Wrong Username";
+
+}
+
+function getUserUrl(inputPassword) {	
+var data = fetchDataFromJasonFile();
+
+ for (var i = 0; i < data.length; i++) {
+    if (inputPassword === getUserPassword() ) {
+      return data[i].Url; 
+    }
+  }
+  return "Wrong Password";
+
+}
+
+function getInputValue(){
+if(inputUsername == getUserName(inputUsername) &&  inputPassword == getUserUrl(inputPassword)){
+	alert('Validation succeeded, select ok to continue..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
+	location.href= function getUserUrl(inputPassword);
+}  else if(inputUsername == getUserName(inputUsername) &&  inputPassword == "") {
+	document.getElementById('pwd').focus();
+	alert('Please enter password..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
+} else {
+	document.getElementById("pwd").value = "";
+	document.getElementById("pwd").focus();	
+	alert('Wrong Password!', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
+}
+}
+
+		 
  </script>
 	<style>
 	
