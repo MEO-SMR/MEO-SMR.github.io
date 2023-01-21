@@ -13,6 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  
+	  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	
 	
 <script> 
@@ -47,76 +49,49 @@
 //     }
 	 
 	 //new code
-var inputUsername = document.getElementById("userName").value;
-var inputPassword = document.getElementById("pwd").value;
-
-function fetchDataFromJasonFile() {
-
-var xhr = new XMLHttpRequest();
-xhr.open("GET", "users.json", true);
-xhr.onreadystatechange = function() {
-  if (xhr.readyState === 4 && xhr.status === 200) {
-    var data = JSON.parse(xhr.responseText);
-    // Do something with the data
-    return data;
-  }
-};
-xhr.send();
-}
-
-
-
-function getUserName() {
-var data = fetchDataFromJasonFile();
-
- for (var i = 0; i < data.length; i++) {
-    if (inputUsername === data[i].Username ) {
-      return data[i].Username; 
+    function fetchDataFromJSON(file) {
+      return $.ajax({
+        url: file,
+        dataType: 'json',
+        success: function(data) {
+          return data;
+        },
+        error: function(xhr, status, error) {
+          console.log("Error fetching data: " + error);
+        }
+      });
     }
-  }
-  return 0;
+    function getInputValue() {
+    $(document).ready(function() {
+      $("#loginForm").submit(function(event) {
+        event.preventDefault();
+        var username = $("#userName").val();
+        var password = $("#pwd").val();
 
+        fetchDataFromJSON("users.json").then(function(data) {
+          var isValid = false;
+
+          for (var i = 0; i < data.length; i++) {
+            if (data[i].Username === username && data[i].Password === password) {
+              isValid = true;
+              break;
+
+            }
+          }
+
+          if (isValid) {
+            alert('Validation succeeded, select ok to continue..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
+	      location.href= data[i].Url;
+          } else {
+            document.getElementById("pwd").value = "";
+		document.getElementById("pwd").focus();	
+		alert('Wrong Password!', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
+          }
+        });
+      });
+    });
 }
-
-function getUserPassword(Username) {
-var data = fetchDataFromJasonFile();
-var user = Username;
- for (var i = 0; i < data.length; i++) {
-    if (user === data[i].Username ) {
-      return data[i].Password; 
-    }
-  }
-  return "0";
-
-}
-
-function getUserUrl(Password) {	
-var data = fetchDataFromJasonFile();
-var pw = Password;
- for (var i = 0; i < data.length; i++) {
-    if (pw === getUserPassword() ) {
-      return data[i].Url; 
-    }
-  }
-  return "0";
-
-}
-
-function getInputValue(){
-if(inputUsername == getUserName(inputUsername) &&  inputPassword == getUserUrl(inputPassword)){
-	alert('Validation succeeded, select ok to continue..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
-	location.href= getUserUrl(inputPassword);
-}  else if(inputUsername == getUserName(inputUsername) &&  inputPassword == "") {
-	document.getElementById('pwd').focus();
-	alert('Please enter password..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
-} else {
-	document.getElementById("pwd").value = "";
-	document.getElementById("pwd").focus();	
-	alert('Wrong Password!', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
-}
-}
-	 
- </script>
+  </script>
 	<style>
 	
 *{
@@ -241,8 +216,8 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
    </head>
 <body>
 
- <div class="container responsive">
-		 <div class="wrapper container-fluid">
+ <div class="container responsive" >
+  <form class="wrapper container-fluid" id  = "loginForm">
     <div class="logo"> <img src="https://drive.google.com/uc?export=view&id=1rTMiqFr3IUdk-FP51EDCdpQT6AExgphi" alt="MEO-Logo"></div>
     <div class="text-center mt-4 name">MEO-Business DB</div>
     <div class="p-3 mt-3" id = "meo">
@@ -257,7 +232,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
         </div> 
         <button class="btn mt-3" id = "modal-button" onclick="getInputValue()">Login</button>
     </div>
-</div>
+</form>
 </div>
    
     
