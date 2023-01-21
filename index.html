@@ -16,7 +16,7 @@
 	
 	
 <script> 
- function getInputValue(){
+ //function getInputValue(){
          
 //             var inputUsername = document.getElementById("userName").value;
 // 	    var inputPassword = document.getElementById("pwd").value;		
@@ -51,12 +51,22 @@ var inputUsername = document.getElementById("userName").value;
 var inputPassword = document.getElementById("pwd").value;
 
 function fetchDataFromJasonFile() {
-var jsonData = import data from 'users.json' assert { type: 'JSON' };
+
+fetch('users.json')
+  .then(response => response.json())
+  .then(data => {
+    // Do something with the data
+    var jsonData = data;
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+
     return jsonData;
 }
 
 
-function getUserName(inputUsername) {
+function getUserName() {
 var data = fetchDataFromJasonFile();
 
  for (var i = 0; i < data.length; i++) {
@@ -64,38 +74,38 @@ var data = fetchDataFromJasonFile();
       return data[i].Username; 
     }
   }
-  return "Wrong Username";
+  return 0;
 
 }
 
-function getUserPassword(inputUsername) {
+function getUserPassword(Username) {
 var data = fetchDataFromJasonFile();
-
+var user = Username;
  for (var i = 0; i < data.length; i++) {
-    if (inputUsername === data[i].Username ) {
+    if (user === data[i].Username ) {
       return data[i].Password; 
     }
   }
-  return "Wrong Username";
+  return "0";
 
 }
 
-function getUserUrl(inputPassword) {	
+function getUserUrl(Password) {	
 var data = fetchDataFromJasonFile();
-
+var pw = Password;
  for (var i = 0; i < data.length; i++) {
-    if (inputPassword === getUserPassword() ) {
+    if (pw === getUserPassword() ) {
       return data[i].Url; 
     }
   }
-  return "Wrong Password";
+  return "0";
 
 }
 
 function getInputValue(){
 if(inputUsername == getUserName(inputUsername) &&  inputPassword == getUserUrl(inputPassword)){
 	alert('Validation succeeded, select ok to continue..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
-	location.href= function getUserUrl(inputPassword);
+	location.href= getUserUrl(inputPassword);
 }  else if(inputUsername == getUserName(inputUsername) &&  inputPassword == "") {
 	document.getElementById('pwd').focus();
 	alert('Please enter password..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
@@ -105,8 +115,7 @@ if(inputUsername == getUserName(inputUsername) &&  inputPassword == getUserUrl(i
 	alert('Wrong Password!', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
 }
 }
-
-		 
+	 
  </script>
 	<style>
 	
