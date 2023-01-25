@@ -168,8 +168,8 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
         .then(response => response.json())
         .then(data => {
           // Store the key-pair values in variables
-          username = data.username;
-          password = data.password;
+          username = data.Username;
+          password = data.Password;
         });
 
       document.getElementById("form").addEventListener("submit", function(e) {
