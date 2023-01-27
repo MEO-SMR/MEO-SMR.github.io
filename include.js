@@ -1,3 +1,3 @@
 $(document).ready(function(){
-    $("#katawan").load("katawan.html");
+    $('#katawan').load('katawan.html');
  });
