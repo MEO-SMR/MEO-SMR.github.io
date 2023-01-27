@@ -23,13 +23,14 @@
 	     document.getElementById('password').focus();
 	     alert('Please enter password..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
         } else {
-	    document.getElementById('password').value = "";
-	    document.getElementById('password').focus();
+	    document.getElementById('username').value = "";
+	   document.getElementById('password').value = "";
+	    document.getElementById('username').focus();
 	     alert('Wrong Username or Password!', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));	
 	}
       });
 
 
-    document.getElementById("password").value = "";
+  
     document.getElementById("password").focus();
     document.getElementById("username").focus();
