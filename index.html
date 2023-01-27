@@ -165,6 +165,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
 <script>
       var username;
       var password;
+      var url;
 
       fetch('users.json')
         .then(response => response.json())
@@ -172,14 +173,14 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
           // Store the key-pair values in variables
           username = data.Username;
           password = data.Password;
-	  Url = data.Url
+	  url = data.Url;
         });
 
       document.getElementById("form").addEventListener("submit", function(e) {
         e.preventDefault();
         if (document.getElementById("username").value == username &&   document.getElementById("password").value == password) {
 	   alert('Validation succeeded, select ok to continue..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
-	   window.location.href = Url;
+	   window.location.href = url;
         } else  if (document.getElementById("username").value == "" || document.getElementById("password").value == "") {
              document.getElementById('password').focus();
 	     alert('Please enter password..', '', 'height=200,width=200,top=' + (window.innerHeight / 2 - 100) + ',left=' + (window.innerWidth / 2 - 100));
