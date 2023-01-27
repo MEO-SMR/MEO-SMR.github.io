@@ -1,7 +1,7 @@
     $(document).ready(function(){
       $.ajax({
           url: 'katawan.html',
-          type: 'get',
+          type: 'GET',
           success: function(data) {
               $("#katawan").html(data);
           }
